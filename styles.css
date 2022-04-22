@@ -84,18 +84,23 @@
 
 html,
 body,
-.page {
+.page,
+.forced-background-color {
   height: 100%;
 }
 
 body {
-  background-color: var(--primary-background-color);
+  background-color: var(--secondary-background-color);
   color: var(--primary-text-color);
   font-family: var(--font-family-aktiv);
   font-weight: var(--font-weight-aktiv);
   font-size: 1.2rem;
   line-height: 1.5;
   text-align: center;
+}
+
+.forced-background-color {
+  background-color: var(--primary-background-color);
 }
 
 .page {
