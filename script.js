@@ -99,8 +99,9 @@ const init = () => {
   // Initial state
   update({
     initialized: false,
-    color: readColorFromLocalStorage() || "white",
   });
+  const initialColor = readColorFromLocalStorage() || "white";
+  updateColor(initialColor)
 
   // Events
   colorPicker.addEventListener("change", handleFormChange);
