@@ -94,7 +94,7 @@ body {
   color: var(--primary-text-color);
   font-family: var(--font-family-aktiv);
   font-weight: var(--font-weight-aktiv);
-  font-size: 1.2rem;
+  font-size: 1.01rem;
   line-height: 1.5;
   text-align: center;
 }
@@ -110,7 +110,8 @@ body {
   width: 100%;
   padding-left: 1em;
   padding-right: 1em;
-  padding-bottom: 1em;
+  padding-bottom: 1.5em;
+  padding-top: 0.75em;
   display: flex;
   flex-direction: column;
 }
@@ -136,7 +137,7 @@ h3 {
   font-weight: var(--font-weight-hammer);
   line-height: 1;
   margin-bottom: 0.3em;
-  font-size: 1.13em;
+  font-size: 1.6em;
   text-align: center;
 }
 
@@ -268,7 +269,7 @@ p {
   padding-left: 1em;
   padding-right: 1em;
   cursor: pointer;
-  font-size: 0.66em;
+  font-size: 0.9em;
 }
 
 .newsletter-signup input[type="submit"]:hover {
@@ -328,7 +329,7 @@ p {
   */
 
   body {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   /*
@@ -338,8 +339,8 @@ p {
   */
 
   .color-picker__swatch {
-    width: 1em;
-    height: 1em;
+    width: 0.97em;
+    height: 0.97em;
   }
 
   /*
@@ -395,7 +396,7 @@ p {
 
 @media screen and (min-width: 43.75em) {
   body {
-    font-size: 1.7rem;
+    font-size: 1.425rem;
   }
 }
 
@@ -418,19 +419,19 @@ p {
   */
 
   body {
-    font-size: 1.8rem;
-    /* text-align: left; */
-  }
-  
-
-  main h3 {
-    /* text-align: left; */
+    font-size: 1.5rem;
   }
   
   main h3 br {
     display: none;
   }
 
+  .highlighted-text {
+    /* display: block; */
+  }
+}
+
+@media screen and (min-width: 36.125em) and (max-width: 50.875em) {
   .highlighted-text {
     display: block;
   }
