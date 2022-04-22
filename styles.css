@@ -11,7 +11,7 @@
   --white: #ffffff;
   --yellow: #F7EB61;
 
-  --border-size: 3px;
+  --border-size: 2px;
 
   --font-family-hammer: hammer, sans-serfif;
   --font-weight-hammer: 800;
@@ -177,8 +177,8 @@ p {
 
 .color-picker__swatch {
   margin: 0.3em;
-  width: 1em;
-  height: 1em;
+  width: 1.5em;
+  height: 1.5em;
   background-color: var(--primary-background-color);
   border: var(--border-size) var(--border-color) solid;
   border-radius: 100%;
@@ -190,6 +190,7 @@ p {
 :: LOGO ::
 ::::::::::
 */
+
 .logo {
   text-align: center;
   margin-bottom: 2em;
@@ -199,17 +200,28 @@ p {
   align-items: center;
 }
 
-.logo img {
-  display: none;
-  width: auto;
-  max-width: 12em;
+.logo__image {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
-body.color-white .logo__white,
-body.color-kraft .logo__kraft,
-body.color-pink .logo__pink,
-body.color-chartreuse .logo__chartreuse {
-  display: inline;
+.color-white .logo__image {
+  background-image: url("/images/logo-white.svg");
+}
+
+.color-kraft .logo__image {
+  background-image: url("/images/logo-kraft.svg");
+}
+
+.color-pink .logo__image {
+  background-image: url("/images/logo-pink.svg");
+}
+
+.color-chartreuse .logo__image {
+  background-image: url("/images/logo-chartreuse.svg");
 }
 
 /*
@@ -220,7 +232,7 @@ body.color-chartreuse .logo__chartreuse {
 
 .newsletter-signup input {
   width: 100%;
-  height: 3.8rem;
+  height: 100%;
   font-size: inherit;
   border-radius: 0;
   -webkit-appearance: none;
@@ -265,17 +277,8 @@ body.color-chartreuse .logo__chartreuse {
   outline: none;
 }
 
-.newsletter-signup__input-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.newsletter-signup__email {
-  flex: 1 1 75%;
-}
-
-.newsletter-signup__submit-wrapper {
-  flex: 0 0 25%;
+.newsletter-signup__input-wrapper {
+  height: 2.7rem;
 }
 
 .newsletter-signup__response {
@@ -283,6 +286,11 @@ body.color-chartreuse .logo__chartreuse {
   padding: 0.5em;
   text-align: center;
   margin-top: 1em;
+}
+
+/* Mailchimp adds some inline validation that would be great but isnt visually what we want */
+#mc_embed_signup div.mce_inline_error {
+  display: none !important;
 }
 
 /* "mobile only" */
@@ -295,9 +303,41 @@ body.color-chartreuse .logo__chartreuse {
 
 /* 500px and wider */
 @media screen and (min-width: 31.25em) {
-  body {
-    font-size: 1.75rem;
+  /*
+  ::::::::::::
+  :: LAYOUT ::
+  ::::::::::::
+  */
+  :root {
+    --border-size: 3px;
   }
+
+  /*
+  ::::::::::::::::::::::::
+  :: GENERAL TYPOGRAPHY ::
+  ::::::::::::::::::::::::
+  */
+
+  body {
+    font-size: 1.5rem;
+  }
+
+  /*
+  ::::::::::::::::::
+  :: COLOR PICKER ::
+  ::::::::::::::::::
+  */
+
+  .color-picker__swatch {
+    width: 1em;
+    height: 1em;
+  }
+
+  /*
+  ::::::::::
+  :: LOGO ::
+  ::::::::::
+  */
 
   .logo {
     margin-bottom: 3em;
@@ -307,8 +347,27 @@ body.color-chartreuse .logo__chartreuse {
     width: 100%;
   }
 
+  /*
+  :::::::::::::::::::::::
+  :: NEWSLETTER SIGNUP ::
+  :::::::::::::::::::::::
+  */
+
   .newsletter-signup__input-group {
+    display: flex;
     flex-direction: row;
+  }
+
+  .newsletter-signup__email {
+    flex: 1 1 75%;
+  }
+  
+  .newsletter-signup__submit-wrapper {
+    flex: 0 0 25%;
+  }
+
+  .newsletter-signup__input-wrapper {
+    height: 2em;
   }
 
   .newsletter-signup input[type="email"] {
@@ -325,25 +384,45 @@ body.color-chartreuse .logo__chartreuse {
   }
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 43.75em) {
+  body {
+    font-size: 1.7rem;
+  }
 }
 
 /* 940px and wider */
 @media screen and (min-width: 58.75em) {
-  body {
-    font-size: 2.25rem;
-    text-align: left;
-  }
+  /*
+  ::::::::::::
+  :: LAYOUT ::
+  ::::::::::::
+  */
   
   .page {
     width: 100%;
   }
 
+  /*
+  ::::::::::::::::::::::::
+  :: GENERAL TYPOGRAPHY ::
+  ::::::::::::::::::::::::
+  */
+
+  body {
+    font-size: 1.8rem;
+    /* text-align: left; */
+  }
+  
+
   main h3 {
-    text-align: left;
+    /* text-align: left; */
   }
   
   main h3 br {
     display: none;
+  }
+
+  .highlighted-text {
+    display: block;
   }
 }
