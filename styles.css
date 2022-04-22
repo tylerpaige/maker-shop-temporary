@@ -300,6 +300,10 @@ p {
 
 /* "mobile only" */
 @media screen and (max-width: 31.249em) {
+  .logo__image {
+    max-height: 13em;
+  }
+
   .not-needed-on-mobile {
     display: none;
   }
