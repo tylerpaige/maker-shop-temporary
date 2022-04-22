@@ -284,10 +284,6 @@ body.color-chartreuse .logo__chartreuse {
 
 /* 500px and wider */
 @media screen and (min-width: 31.25em) {
-  :root {
-    --border-size: 3px; 
-  }
-  
   body {
     font-size: 1.75rem;
   }
@@ -312,10 +308,6 @@ body.color-chartreuse .logo__chartreuse {
 
 /* 940px and wider */
 @media screen and (min-width: 58.75em) {
-  :root {
-    --border-size: 4px; 
-  }
-
   body {
     font-size: 2.25rem;
   }
