@@ -62,6 +62,7 @@ const handleFormChange = (e) => {
 };
 
 const init = () => {
+  console.log("loaded");
   // Elements
   const colorPicker = document.querySelector(".js-color-picker");
   const colorOptions = colorPicker.querySelectorAll(".js-color-swatch");
