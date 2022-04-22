@@ -1,0 +1,326 @@
+:root {
+  --black: #000000;
+  --blue: #0048C1;
+  --chartreuse: #A7D75C;
+  --cyan: #00A1E0;
+  --kelly-green: #008000;
+  --kraft: #FFC000;
+  --pink: #FFA7EB;
+  --purple: #9F1894;
+  --red: #F70000;
+  --white: #ffffff;
+  --yellow: #F7EB61;
+
+  --border-size: 3px;
+
+  --font-family-hammer: hammer, sans-serfif;
+  --font-weight-hammer: 800;
+  --font-family-aktiv: aktiv-grotesk, sans-serfif;
+  --font-weight-aktiv: 400;
+}
+
+@font-face {
+  font-family: hammer;
+  src:
+    url("/fonts/hammer.woff2") format("woff2"),
+    url("/fonts/hammer.woff") format("woff");
+  font-weight: 800;
+}
+
+
+.color-chartreuse {
+  --primary-background-color: var(--chartreuse);
+  --primary-text-color: var(--black);
+  --primary-accent-color: var(--blue);
+  --secondary-background-color: var(--white);
+  --secondary-text-color: var(--black);
+  --cta-background-color: var(--blue);
+  --cta-text-color: var(--white);
+  --border-color: var(--black);
+}
+
+.color-kraft {
+  --primary-background-color: var(--kraft);
+  --primary-text-color: var(--black);
+  --primary-accent-color: var(--purple);
+  --secondary-background-color: var(--white);
+  --secondary-text-color: var(--black);
+  --cta-background-color: var(--purple);
+  --cta-text-color: var(--white);
+  --border-color: var(--black);
+}
+
+.color-pink {
+  --primary-background-color: var(--pink);
+  --primary-text-color: var(--black);
+  --primary-accent-color: var(--kelly-green);
+  --secondary-background-color: var(--white);
+  --secondary-text-color: var(--black);
+  --cta-background-color: var(--kelly-green);
+  --cta-text-color: var(--white);
+  --border-color: var(--black);
+}
+
+.color-white {
+  --primary-background-color: var(--white);
+  --primary-text-color: var(--black);
+  --primary-accent-color: var(--red);
+  --secondary-background-color: var(--yellow);
+  --secondary-text-color: var(--black);
+  --cta-background-color: var(--red);
+  --cta-text-color: var(--white);
+  --border-color: var(--black);
+}
+
+/*
+::::::::::::
+:: LAYOUT ::
+::::::::::::
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.page {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  font-family: var(--font-family-aktiv);
+  font-weight: var(--font-weight-aktiv);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.page {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 58rem;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  margin-bottom: 1em;
+}
+
+/*
+::::::::::::::::::::::::
+:: GENERAL TYPOGRAPHY ::
+::::::::::::::::::::::::
+*/
+
+h3 {
+  font-family: var(--font-family-hammer);
+  font-weight: var(--font-weight-hammer);
+  line-height: 1;
+  margin-bottom: 0.3em;
+  font-size: 1.13em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/*
+:::::::::::::::
+:: UTILITIES ::
+:::::::::::::::
+*/
+
+.highlighted-text {
+  color: var(--primary-accent-color);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+/*
+::::::::::::::::::
+:: COLOR PICKER ::
+::::::::::::::::::
+*/
+.color-picker {
+  margin-bottom: 2em;
+}
+
+.color-picker form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.color-picker__swatch {
+  margin: 0.3em;
+  width: 1em;
+  height: 1em;
+  background-color: var(--primary-background-color);
+  border: var(--border-size) var(--border-color) solid;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+/*
+::::::::::
+:: LOGO ::
+::::::::::
+*/
+.logo {
+  text-align: center;
+  margin-bottom: 2em;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  display: none;
+  width: 100%;
+  max-width: 8em;
+}
+
+body.color-white .logo__white,
+body.color-kraft .logo__kraft,
+body.color-pink .logo__pink,
+body.color-chartreuse .logo__chartreuse {
+  display: inline;
+}
+
+/*
+:::::::::::::::::::::::
+:: NEWSLETTER SIGNUP ::
+:::::::::::::::::::::::
+*/
+
+.newsletter-signup input {
+  width: 100%;
+  height: 3.8rem;
+  font-size: inherit;
+}
+
+.newsletter-signup input[type="email"] {
+  background-color: transparent;
+  border: var(--border-size) var(--border-color) solid;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-bottom: 0;
+  vertical-align: top;
+}
+
+.newsletter-signup input[type="email"]:focus-visible {
+  background-color: var(--secondary-background-color);
+  color: var(--secondary-text-color);
+  outline: none;
+}
+
+.newsletter-signup input[type="submit"] {
+  background-color: var(--cta-background-color);
+  border: var(--border-size) var(--border-color) solid;
+  color: var(--cta-text-color);
+  font-family: "Hammer", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  cursor: pointer;
+  font-size: 0.66em;
+  vertical-align: top;
+}
+
+.newsletter-signup input[type="submit"]:hover {
+  background-color: var(--cta-text-color);
+  color: var(--cta-background-color);
+}
+
+.newsletter-signup input[type="submit"]:focus-visible {
+  background-color: var(--secondary-background-color);
+  color: var(--secondary-text-color);
+  outline: none;
+}
+
+.newsletter-signup__input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter-signup__email {
+  flex: 1 1 75%;
+}
+
+.newsletter-signup__submit-wrapper {
+  flex: 0 0 25%;
+}
+
+.newsletter-signup__response {
+  background: var(--secondary-background-color);
+  padding: 0.5em;
+  text-align: center;
+  margin-top: 1em;
+}
+
+/* 500px and wider */
+@media screen and (min-width: 31.25em) {
+  :root {
+    --border-size: 3px; 
+  }
+  
+  body {
+    font-size: 1.75rem;
+  }
+
+  .newsletter-signup__input-group {
+    flex-direction: row;
+  }
+
+  .newsletter-signup input[type="email"] {
+    border-right: 0;
+    border-bottom: var(--border-size) var(--border-color) solid;
+  }
+  
+  .newsletter-signup__email {
+    flex: 1 1 75%;
+  }
+  
+  .newsletter-signup__submit-wrapper {
+    flex: 0 0 25%;
+  }
+}
+
+/* 940px and wider */
+@media screen and (min-width: 58.75em) {
+  :root {
+    --border-size: 4px; 
+  }
+
+  body {
+    font-size: 2.25rem;
+  }
+
+  .page {
+    width: 100%;
+  }
+}
