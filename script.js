@@ -88,10 +88,17 @@ const renderColor = (previousState) => {
 const handleFormChange = (e) => {
   const color = e.target.value || "white";
   updateColor(color);
+
+  if (gtag) {
+    gtag("event", "color-picker", {
+      event_category: "general",
+      event_label: "color-picker-choice",
+      value: color,
+    });
+  }
 };
 
 const init = () => {
-  console.log("loaded");
   // Elements
   const colorPicker = document.querySelector(".js-color-picker");
   const colorOptions = colorPicker.querySelectorAll(".js-color-swatch");
@@ -101,7 +108,7 @@ const init = () => {
     initialized: false,
   });
   const initialColor = readColorFromLocalStorage() || "white";
-  updateColor(initialColor)
+  updateColor(initialColor);
 
   // Events
   colorPicker.addEventListener("change", handleFormChange);
